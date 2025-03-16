@@ -1,0 +1,35 @@
+/* src/components/TransactionQueryTable/TransactionQueryTable.module.css */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: rgb(31, 83, 220);
+  font-weight: bold;
+}
+
+.loading, .error {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error {
+  color: red;
+  background-color: #ffe0e0;
+}
+
+.loading {
+  background-color: rgba(0, 128, 0, 0.5);
+}

@@ -1,0 +1,48 @@
+/* src/components/login/loginFormRegister.module.css */
+
+.registerFormContainer {
+  max-width: 400px;
+  margin: 2rem auto; /* Centrar el formulario */
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745; /* Verde éxito */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1e7e34; /* Verde más oscuro al pasar el mouse */
+}

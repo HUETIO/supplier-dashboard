@@ -1,0 +1,193 @@
+/* Estilos base del header */
+.header {
+  background-color: #2d3748; /* Darker, more modern header background */
+  color: white;
+  padding: 1.5rem 1rem; /* Increased padding for better spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle header shadow */
+  position: relative; /* For modal positioning context */
+  z-index: 100; /* Ensure header is above other content */
+}
+
+.container {
+  display: table;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Keep horizontal padding for container */
+}
+
+.logo {
+  font-size: 1.75rem; /* Slightly larger logo */
+  font-weight: 700; /* Bold logo text */
+  color: #f0f4f8; /* Lighter text for logo */
+  transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+.logo:hover {
+  color: #e2e8f0; /* Even lighter on hover */
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem; /* Increased gap between nav items */
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin: 0;
+}
+
+.navLink {
+  color: #cbd5e0; /* Softer white for nav links */
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent; /* Ensure transparent background */
+  border: none;
+  font-size: 1rem;
+  padding: 0.75rem 0; /* Increased vertical padding */
+  display: block;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Smooth transitions */
+  position: relative; /* For underline animation */
+}
+
+.navLink:hover {
+  color: #ffffff; /* Brighter white on hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle text glow on hover */
+}
+
+/* Underline animation for nav links */
+.navLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #64748b; /* Underline color */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navLink:hover::after {
+  transform: scaleX(1); /* Expand underline on hover */
+}
+
+
+/* Contenedor del botón y modal */
+.buttonContainer {
+  position: relative; /* For absolute modal positioning */
+}
+
+/* Estilos del modal */
+.modal {
+  position: absolute;
+  top: 110%; /* Slightly further down */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.95); /* Darker, slightly more opaque modal background */
+  padding: 2rem; /* Increased padding */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow for depth */
+  z-index: 1000;
+  width: 350px; /* Slightly wider modal */
+  color: white;
+  margin-top: 1rem; /* Increased margin above modal */
+  display: none; /* Hidden by default */
+  overflow: hidden; /* Clip content for rounded corners and animations */
+}
+
+.modal::before { /* Subtle border effect */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle white border */
+  border-radius: inherit; /* Inherit border-radius from .modal */
+  pointer-events: none; /* Make sure it doesn't interfere with clicks */
+}
+
+
+.modal.show {
+  display: block; /* Show modal when 'show' class is present */
+}
+
+.modalContent {
+  animation: fadeInScale 0.4s ease-out forwards; /* Combined fade and scale animation */
+}
+
+.modal h2 {
+  margin-bottom: 1.5rem; /* Increased margin below heading */
+  font-size: 1.5rem; /* Larger heading */
+  font-weight: 600; /* Slightly bolder heading */
+  text-align: center; /* Center align heading */
+  color: #e2e8f0; /* Lighter heading color */
+}
+
+.modal label {
+  display: block; /* Make labels block elements */
+  margin-bottom: 0.5rem; /* Spacing below labels */
+  color: #cbd5e0; /* Softer label color */
+  font-weight: 500; /* Slightly bolder labels */
+}
+
+.modal input {
+  width: 80%;
+  padding: 0.75rem; /* Increased input padding */
+  margin-bottom: 1.5rem; /* Increased margin below inputs */
+  border: 1px solid #64748b; /* Darker input border */
+  border-radius: 6px; /* Rounded input corners */
+  background-color: #4a5568; /* Darker input background */
+  color: white;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Input transition */
+  outline: none; /* Remove default focus outline */
+}
+
+.modal input:focus {
+  border-color: #a0aec0; /* Lighter border on focus */
+  box-shadow: 0 0 0 2px rgba(160, 174, 192, 0.3); /* Subtle focus shadow */
+}
+
+
+.modal button {
+  width: 100%;
+  padding: 0.85rem; /* Increased button padding */
+  background-color: #63b3ed; /* Lighter blue button */
+  color: #1a202c; /* Darker text color for button */
+  font-weight: 600; /* Bolder button text */
+  border: none;
+  border-radius: 6px; /* Rounded button corners */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Button transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+
+.modal button:hover {
+  background-color: #4299e1; /* Darker blue on hover */
+  transform: scale(1.03); /* Subtle scale up on hover */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Increased shadow on hover */
+}
+
+.modal button:active {
+  transform: scale(1); /* Reset scale when active/clicked */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Reduced shadow when active */
+}
+
+
+/* Combined Fade-in and Scale Animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95); /* Start slightly scaled down */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Scale up to normal size */
+  }
+}
